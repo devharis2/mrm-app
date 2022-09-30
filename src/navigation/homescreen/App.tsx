@@ -1,28 +1,28 @@
-import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-
-import { Landing, Login } from "../../components";
+import { Info } from "../../components";
+import Home from "./Tabs";
 
 const Stack = createNativeStackNavigator();
 
-export default function AppNavigator() {
+export default function App() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName="Info">
       <Stack.Screen
-        name="Landing"
-        component={Landing}
+        component={Info}
+        name="Info"
         options={{
           headerShown: false,
+          statusBarStyle: "dark",
           statusBarTranslucent: true,
         }}
       />
       <Stack.Screen
-        name="Login"
-        component={Login}
+        component={Home}
+        name="App"
         options={{
           headerShown: false,
-          statusBarTranslucent: true,
           statusBarStyle: "dark",
+          statusBarTranslucent: true,
         }}
       />
     </Stack.Navigator>
